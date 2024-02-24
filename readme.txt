@@ -35,7 +35,3 @@ This is an implementation of the Red-Blue Nim game with options for both standar
 
 * Running on ACS Omega
     This code can be run on the ACS Omega platform if needed. Simply follow the instructions provided for running the code on ACS Omega, ensuring that Python is available on the platform.
-
-* Contributor
-    Yashkumar Chandwani
-    Email: yxc5885@mavs.uta.edu
