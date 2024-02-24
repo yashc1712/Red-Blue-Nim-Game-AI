@@ -1,0 +1,27 @@
+Evaluation Function Reasoning
+
+The evaluate function in code is responsible for calculating a score that represents the state of the game. This score is used in the minimax algorithm to determine the desirability of a particular game state. The reasoning behind the evaluate function for both the standard and misère versions of the game is as follows:
+
+- Standard Version (version == "standard"):
+
+    In the standard version of the game, the objective is to avoid being the player who removes the last marble, as that player loses. Here's how the evaluation function works:
+
+    For each remaining red marble, 2 points are added to the score. This is because removing a red marble incurs a cost of 2 points on the opponent.
+    For each remaining blue marble, 3 points are added to the score. Removing a blue marble costs the opponent 3 points.
+    The total score is the sum of the points calculated for red and blue marbles.
+    The reasoning behind this evaluation is based on the idea that in the standard version, players aim to create a situation where their opponent is left with the last marble to pick. This evaluation encourages the computer player to make moves that bring it closer to this winning condition.
+
+- Misère Version (version != "standard"):
+
+    In the misère version, the game objective is reversed. The goal is to force the opponent to remove the last marble, making them the loser. The evaluation function for the misère version works as follows:
+
+    If both red and blue marbles are present (red > 0 and blue > 0), the game is still ongoing, and there is no clear winner. In this case, a score of 1 is returned to indicate that the game is still in progress.
+    If there are no red marbles left (red == 0) and only blue marbles remain, a score of 1 is returned. This signifies that the player whose turn is next (the opponent) is in a winning position. If the current player avoids removing the last marble, they are likely to force the opponent into a losing position.
+    Similarly, if there are no blue marbles left (blue == 0), a score of 1 is returned, indicating a winning position for the current player.
+    The logic behind this evaluation is grounded in the idea that in the misère version, players aim to force their opponent into a situation where they must make the last move, leading to their defeat. The evaluation function encourages the computer player to pursue moves that put it closer to this winning condition.
+
+In summary, the evaluation function's logic aligns with the game's objectives in each version. It assigns scores that reflect the players' strategic goals: avoiding being the player to make the last move in the standard version and forcing the opponent to make the last move in the misère version. These scores guide the Minimax algorithm in making decisions that lead to favorable outcomes in line with the game's rules and objectives.
+
+
+
+
